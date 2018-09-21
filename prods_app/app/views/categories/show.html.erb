@@ -5,7 +5,7 @@
   <%= @category.name %>
 </p>
 
-<%= form_with( model: [ @category, Product.new ], local: true ) do |form| %>
+<%= form_with( model: [ @category, Product.new ], local: true, html: { style: 'margin-bottom: 20px' } ) do |form| %>
   <%= form.hidden_field :category_id, value: @category.id %>
   <div class="form-group">
     <%= form.text_field :name, class: 'form-control',  placeholder: 'Nombre' %>
@@ -35,5 +35,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Edit', edit_category_path(@category), class: 'btn btn-default' %> <%= link_to 'Back', categories_path, class: 'btn btn-primary' %>

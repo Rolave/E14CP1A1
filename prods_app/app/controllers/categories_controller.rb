@@ -53,8 +53,6 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category.products.destroy_all
-    @category = Category.find(params[:id])
-    @category.destroy
     if @category.destroy
       redirect_to categories_path, notice: 'Category was successfully destroyed.'
     else
